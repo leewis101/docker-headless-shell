@@ -1,9 +1,9 @@
-FROM ubuntu:18.04
+FROM debian:stretch-slim
 
 RUN \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update -y \
-    && apt-get install -y libnspr4 libnss3 libexpat1 libfontconfig1 libuuid1 \
+    && apt-get install -y libnspr4 libnss3 libexpat1 libfontconfig1 libuuid1 ca-certificates tzdata\
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
 ARG VER
